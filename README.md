@@ -1,4 +1,4 @@
-# GetHomeSafe
+# Get Home Safe
 
 ## About this project
 
