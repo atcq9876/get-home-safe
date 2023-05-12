@@ -44,4 +44,3 @@ JWT_SECRET=SUPER_SECRET
 
 https://user-images.githubusercontent.com/106770545/218480451-755731f2-e6ce-4dc0-b4d0-755ef936bf3d.mp4
 
-
