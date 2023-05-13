@@ -57,7 +57,7 @@ const Timeout = ({ setViewTimeOut, setViewNotHomeSafe, handleHomeSafe }) => {
           },
           body: JSON.stringify({
             notification: {
-              title: `${name} didnt get home safe...`,
+              title: `${name} didn't get home safe...`,
               message: `Tap here to see more info` ,
               timeSent: new Date(),
               name: name,
