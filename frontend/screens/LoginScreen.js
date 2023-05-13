@@ -4,16 +4,16 @@ import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { registerIndieID } from "native-notify";
 
-function LoginScreen({ navigation }) {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [error, setError] = useState(null);
 
-  function emailInputHandler(enteredEmail) {
+  const emailInputHandler = (enteredEmail) => {
     setEmail(enteredEmail.toLowerCase());
   }
 
-  function passwordInputHandler(enteredPassword) {
+  const passwordInputHandler = (enteredPassword) => {
     setPassword(enteredPassword);
   }
 

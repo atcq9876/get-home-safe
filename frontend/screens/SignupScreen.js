@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { registerIndieID } from "native-notify";
 
-function SignupScreen({ navigation }) {
+const SignupScreen = ({ navigation }) => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);

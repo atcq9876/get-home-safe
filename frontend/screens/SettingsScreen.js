@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import ChangePasswordModal from '../modals/ChangePasswordModal'
 import DeleteAccountModal from '../modals/DeleteAccountModal'
 
-function SettingsScreen({ navigation }) {
+const SettingsScreen = ({ navigation }) => {
   const [userId, setUserId] = useState(null)
   const [speed, setSpeed] = useState(null)
 
