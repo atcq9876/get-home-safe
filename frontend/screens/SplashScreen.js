@@ -37,7 +37,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./loadinggif.gif")}></Image>
+      <Image style={styles.image} source={require("../assets/loadinggif.gif")}></Image>
     </View>
   )
 }

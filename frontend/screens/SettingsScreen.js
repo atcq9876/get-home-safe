@@ -105,7 +105,7 @@ function SettingsScreen({ navigation }) {
           Id nibh tortor id aliquet lectus proin. Id nibh tortor id aliquet lectus proin.
           Id nibh tortor id.
         </Text> */}
-        <Image style={styles.aboutUsContainer} source={require("./logo.png")}></Image>
+        <Image style={styles.aboutUsContainer} source={require("../assets/logo.png")}></Image>
       </View>
       <View style={styles.container}>
         {speed && (
