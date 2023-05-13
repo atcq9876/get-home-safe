@@ -2,6 +2,8 @@ import React from 'react'
 import { Dimensions, StyleSheet, TextInput, View } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
+const GOOGLE_MAPS_APIKEY = require('../../../mapsApiKey');
+
 const GooglePlacesInput = ({setDestination, setStarted, setIsRunning}) => {
 
   return (
@@ -11,7 +13,7 @@ const GooglePlacesInput = ({setDestination, setStarted, setIsRunning}) => {
         fetchDetails={true} // you need this to fetch the details object onPress
         placeholder="Search"
         query={{
-          key: 'AIzaSyDWAjYtvhI6SV-unnKj7Q-iqOB10OhUxXQ',
+          key: GOOGLE_MAPS_APIKEY,
           language: "en", // language of the results
         }}
         onPress={(data, details = null) => {
