@@ -90,21 +90,7 @@ const SettingsScreen = ({ navigation }) => {
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>Settings</Text>
       </View>
-      {/* <View style={styles.logoContainer}> */}
-        {/* Add logo instead of text below once finalised */}
-        {/* <Text style={styles.logoText}>Get Home Safe</Text> */}
-      {/* </View> */}
       <View style={styles.aboutUsContainer}>
-        {/* <Text style={styles.aboutUsTitle}>About the app</Text>
-        <Text style={styles.aboutUsText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue
-          mauris rhoncus aenean vel elit scelerisque mauris. Risus nec feugiat
-          in fermentum posuere urna. Id nibh tortor id aliquet lectus proin.
-          Nisl purus in mollis nunc sed id. Id nibh tortor id aliquet lectus proin.
-          Id nibh tortor id aliquet lectus proin. Id nibh tortor id aliquet lectus proin.
-          Id nibh tortor id.
-        </Text> */}
         <Image style={styles.aboutUsContainer} source={require("../assets/logo.png")}></Image>
       </View>
       <View style={styles.container}>
