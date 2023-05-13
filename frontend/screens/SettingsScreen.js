@@ -9,8 +9,8 @@ import {
   Image
 } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import ChangePasswordModal from '../components/ChangePasswordModal'
-import DeleteAccountModal from '../components/DeleteAccountModal'
+import ChangePasswordModal from '../modals/ChangePasswordModal'
+import DeleteAccountModal from '../modals/DeleteAccountModal'
 
 function SettingsScreen({ navigation }) {
   const [userId, setUserId] = useState(null)
