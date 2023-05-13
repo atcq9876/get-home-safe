@@ -47,7 +47,6 @@ const LoginScreen = ({ navigation }) => {
       navigation.replace("NavbarContainer");
     } else {
       setError(data.error);
-      console.log("Error:", error);
     }
   };
 

@@ -27,8 +27,6 @@ const DeleteAccountModal = ({
 
       if(response.status === 200) {
         handleModal();
-      } else {
-        console.log('Delete unsuccessful');
       }
   }
   
