@@ -2,7 +2,6 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 const Contact = ({ item, setUpdated, userId }) => {
   const handleDelete = (email) => {
-    // console.log(email)
     fetch(`http://localhost:8080/api/user/contact`, {
       method: 'PATCH',
       headers: {
@@ -14,7 +13,6 @@ const Contact = ({ item, setUpdated, userId }) => {
         field: 'delete',
       }),
     }).then((response) => {
-      // console.log(response)
       setUpdated(true)
     })
   }

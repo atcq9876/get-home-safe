@@ -26,7 +26,6 @@ function SettingsScreen({ navigation }) {
   const retrieveUserId = async () => {
     const value = await AsyncStorage.getItem('user_id')
     setUserId(value)
-    console.log('userId: ', value)
   }
   retrieveUserId()
 
@@ -56,10 +55,8 @@ function SettingsScreen({ navigation }) {
     })
       let data = await response.json()
       if(response.status === 200) {
-        console.log(data);
       } else {
         setError(data.error);
-        console.log('Error:', error);
       }
   }
 

@@ -28,11 +28,9 @@ const ChangePasswordModal = ({ userId, changePasswordModalVisible, setChangePass
     // checks for errors not handled in backend (maybe move first one to backend)
     if (newPassword === null) {
       setError('All fields must be filled');
-      console.log(error);
       return true;
     } else if (newPassword !== retypedPassword) {
       setError('Passwords do not match');
-      console.log(error);
       return true;
     }
   }
@@ -54,11 +52,9 @@ const ChangePasswordModal = ({ userId, changePasswordModalVisible, setChangePass
       let data = await response.json()
       
       if(response.status === 200) {
-        console.log(data.message);
         handleModal();
       } else {
         setError(data.error);
-        console.log('Error:', error);
       }
   }
 

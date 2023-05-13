@@ -13,10 +13,8 @@ const Timeout = ({ setViewTimeOut, setViewNotHomeSafe, handleHomeSafe }) => {
   const retrieveUserInfo = async () => {
     const userName = await AsyncStorage.getItem('name');
     setName(userName);
-    console.log('name: ', userName);
     const phone = await AsyncStorage.getItem('phoneNumber');
     setPhoneNumber(phone);
-    console.log('phoneNumber: ', phoneNumber);
   }
   retrieveUserInfo();
 

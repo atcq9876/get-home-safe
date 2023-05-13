@@ -20,7 +20,6 @@ function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     if (!email) {
       setError("All fields must be filled");
-      console.log(error);
       return;
     }
 
@@ -35,12 +34,6 @@ function LoginScreen({ navigation }) {
     });
 
     let data = await response.json();
-    console.log("data: ", data);
-    console.log("token:", data.token);
-    console.log("user_id:", data.user_id);
-    console.log("name: ", data.name);
-    console.log("walkingSpeed: ", data.walkingSpeed);
-    console.log("phoneNumber: ", data.phoneNumber);
 
     if (response.status === 200) {
       AsyncStorage.setItem("token", data.token);

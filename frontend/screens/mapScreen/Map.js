@@ -97,7 +97,6 @@ const MapScreen = () => {
 
   const sendSOSNotification = async (userId, data) => {
     let currentLocation = await Location.getCurrentPositionAsync({})
-    console.log(currentLocation)
     for (const contact of data.emergencyContacts) {
       await fetch('https://app.nativenotify.com/api/indie/notification', {
         method: 'POST',

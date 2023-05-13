@@ -272,7 +272,6 @@ describe("emergencyContact", () => {
   // test("it returns users that match the search", async () => {
   //   let response = await request(app)
   //     .get("/api/user/contacts/search/ema")
-  //     console.log(response.text[)
   //     expect(response.data).toBe(200);
   // })
 });

@@ -23,7 +23,6 @@ const ContactsScreen = () => {
     const retrieveUserId = async () => {
       const value = await AsyncStorage.getItem('user_id');
       setUserId(value);
-      // console.log(value)
     };
     retrieveUserId();
   },[])

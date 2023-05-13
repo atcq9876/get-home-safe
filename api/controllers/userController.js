@@ -41,8 +41,6 @@ const signupUser = async (req, res) => {
 
     const userWithId = await User.findOne({ email: email })
 
-    console.log(userWithId);
-
     res.status(200).json({
       user_id: userWithId._id,
       name: userWithId.name, token,
@@ -161,7 +159,6 @@ const deleteNotification = async (req, res) => {
 const emergencyContact = async (req, res) => {
   const { user_id, emergencyContactEmail, field } = req.body
   const reqContact = await User.findOne({ email: emergencyContactEmail })
-  // console.log(reqContact._id.toString(), user_id)
   if (!reqContact) {
     res.status(400).json({ error: 'This user does not exist' })
     return
@@ -174,7 +171,6 @@ const emergencyContact = async (req, res) => {
     if (field === 'add') {
       const user = await User.findOne({ _id: user_id })
       const currentContacts = user.emergencyContacts.toObject()
-      console.log(currentContacts)
       if (
         !currentContacts.some(
           (contact) => contact.email === emergencyContactEmail,
@@ -228,7 +224,6 @@ const emergencyContact = async (req, res) => {
 }
 const getEmergencyContacts = async (req, res) => {
   const user_id = req.params.id
-  // console.log(user_id)
   try {
     const user = await User.findById(user_id)
     res.status(200).json({ emergencyContacts: user.emergencyContacts })

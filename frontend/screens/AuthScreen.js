@@ -24,7 +24,6 @@ function HomeScreen({ navigation }) {
       retrieveToken();
     });
 
-    console.log("useEffect triggered");
   }, [token]);
 
   const handleLogout = async () => {

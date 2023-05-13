@@ -35,12 +35,10 @@ function SignupScreen({ navigation }) {
   const checkForInputErrors = () => {
     if (password !== retypedPassword) {
       setError("Passwords do not match");
-      console.log(error);
       return;
       return true;
     } else if (!email) {
       setError("All fields must be filled");
-      console.log(error);
       return true;
     }
   };
