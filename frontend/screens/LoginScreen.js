@@ -10,7 +10,7 @@ function LoginScreen({ navigation }) {
   const [error, setError] = useState(null);
 
   function emailInputHandler(enteredEmail) {
-    setEmail(enteredEmail);
+    setEmail(enteredEmail.toLowerCase());
   }
 
   function passwordInputHandler(enteredPassword) {

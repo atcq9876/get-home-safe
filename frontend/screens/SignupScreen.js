@@ -17,7 +17,7 @@ function SignupScreen({ navigation }) {
   };
 
   const emailInputHandler = (enteredEmail) => {
-    setEmail(enteredEmail);
+    setEmail(enteredEmail.toLowerCase());
   };
 
   const phoneNumberInputHandler = (enteredPhoneNumber) => {
