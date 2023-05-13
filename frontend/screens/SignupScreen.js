@@ -55,7 +55,7 @@ const SignupScreen = ({ navigation }) => {
       },
       body: JSON.stringify({
         name: name,
-        email: email.toLowerCase(),
+        email: email,
         phoneNumber: phoneNumber,
         password: password,
       }),
