@@ -4,31 +4,11 @@ import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import registerNNPushToken from 'native-notify';
 
-// screens
 import SplashScreen from "./screens/SplashScreen";
-import LoginScreen from "./screens/LoginScreen";
-import SignupScreen from "./screens/SignupScreen";
+import Auth from "./navigation/AuthStack";
 import NavbarContainer from "./navigation/NavbarContainer";
 
 const Stack = createStackNavigator();
-
-const Auth = () => {
-  return (
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Signup"
-        component={SignupScreen}
-        options={{ headerShown: false }}
-      />
-    </Stack.Navigator>
-  );
-};
-
 
 const App = () => {
   registerNNPushToken(6193, 'rWR1WMqaI8HcWYDUZQFStS');
