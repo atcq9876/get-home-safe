@@ -14,6 +14,7 @@ import Swipelist from 'react-native-swipeable-list-view'
 import moment from 'moment'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
+import NotificationModal from '../modals/NotificationModal'
 
 const NotificationsScreen = () => {
   const [notifications, setNotifications] = useState(null);
@@ -110,46 +111,10 @@ const NotificationsScreen = () => {
                         </Text>
                       </View>
                       {notificationModalIsVisible && selectedNotification &&
-                        <Modal>
-                          <View style={styles.emergencyModal}>
-                            <Pressable style={styles.closeButton} onPress={handleNotificationModal}>
-                              <Ionicons name={'close'} size={36} color={'black'} />
-                            </Pressable>
-                            <View style={styles.modalMainContents}>
-                              <Text style={styles.modalText}>{selectedNotification.name} didn't make it home!</Text>
-                              <Text style={styles.lastLocationText}>Their last location:</Text>
-                              <View style={styles.mapContainer}>
-                                <MapView
-                                style={styles.map}
-                                provider={PROVIDER_GOOGLE}
-                                  initialRegion={{
-                                    latitude: selectedNotification.latitude,
-                                    longitude: selectedNotification.longitude,
-                                    latitudeDelta: 0.01,
-                                    longitudeDelta: 0.01,
-                                  }}
-                                >
-                                <Marker coordinate = {{latitude: selectedNotification.latitude,longitude: selectedNotification.longitude}}
-                                  pinColor = {"purple"} // any color
-                                  title={`${selectedNotification.name}`}
-                                />
-                                </MapView>
-                              </View>
-                              <TouchableOpacity
-                                style={styles.callButton}
-                                onPress={() => Linking.openURL(`tel:${selectedNotification.phoneNumber}`)}
-                              >
-                                <Text style={styles.callButtonText}>Call {selectedNotification.name}</Text>
-                              </TouchableOpacity>
-                              <TouchableOpacity
-                                style={styles.callButton}
-                                onPress={() => Linking.openURL('tel:999')}
-                              >
-                                <Text style={styles.callButtonText}>Call 999</Text>
-                              </TouchableOpacity>
-                            </View>
-                          </View>
-                        </Modal>
+                        <NotificationModal
+                          handleNotificationModal={handleNotificationModal}
+                          selectedNotification={selectedNotification}
+                        />
                       }
                     </TouchableOpacity>
                   }
@@ -284,68 +249,6 @@ const styles = StyleSheet.create({
   rightActionText: {
     color: 'white',
     fontWeight: '600',
-  },
-  emergencyModal: {
-    flex: 1,
-    marginTop: 46,
-    marginBottom: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-  closeButton: {
-    flex: 0.1,
-    justifyContent: 'flex-start',
-    paddingTop: 20,
-    paddingRight: 20,
-    marginLeft: 'auto',
-  },
-  modalMainContents: {
-    flex: 0.9,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 0,
-    marginBottom: 70,
-  },
-  modalText: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: 'black',
-    marginBottom: 20,
-    alignSelf: 'center',
-  },
-  lastLocationText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: 'black',
-    marginBottom: 8,
-    // alignSelf: 'left',
-  },
-  mapContainer: {
-    height: 500,
-    width: 400,
-    margin: 10,
-    borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  callButton: {
-    marginTop: 15,
-    marginBottom: 10,
-    padding: 10,
-    width: 400,
-    borderRadius: 6,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'black',
-  },
-  callButtonText: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: 'white',
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
   },
 })
 
