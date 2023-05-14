@@ -15,19 +15,12 @@ import DeleteAccountModal from '../modals/DeleteAccountModal'
 const SettingsScreen = ({ navigation }) => {
   const [userId, setUserId] = useState(null)
   const [speed, setSpeed] = useState(null)
-
   const [changePasswordModalVisible, setChangePasswordModalVisible] = useState(
     false,
   )
   const [deleteAccountModalVisible, setDeleteAccountModalVisible] = useState(
     false,
   )
-
-  const retrieveUserId = async () => {
-    const value = await AsyncStorage.getItem('user_id')
-    setUserId(value)
-  }
-  retrieveUserId()
 
   const handleChangePasswordModal = () => {
     setChangePasswordModalVisible(!changePasswordModalVisible)
@@ -61,12 +54,19 @@ const SettingsScreen = ({ navigation }) => {
   }
 
   useEffect(() => {
+    const retrieveUserId = async () => {
+      const value = await AsyncStorage.getItem('user_id')
+      setUserId(value)
+    }
+
     const getCurrentWalkingSpeed = async () => {
       let userId = await AsyncStorage.getItem("user_id");
       let response = await fetch('http://localhost:8080/api/user/' + userId)
       let data = await response.json()
       setSpeed(data.walkingSpeed)
     }
+
+    retrieveUserId();
     getCurrentWalkingSpeed();
   }, [])
 
