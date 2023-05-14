@@ -54,19 +54,13 @@ const SettingsScreen = ({ navigation }) => {
   }
 
   useEffect(() => {
-    const retrieveUserId = async () => {
-      const value = await AsyncStorage.getItem('user_id')
-      setUserId(value)
-    }
-
     const getCurrentWalkingSpeed = async () => {
       let userId = await AsyncStorage.getItem("user_id");
       let response = await fetch('http://localhost:8080/api/user/' + userId)
       let data = await response.json()
       setSpeed(data.walkingSpeed)
+      setUserId(userId)
     }
-
-    retrieveUserId();
     getCurrentWalkingSpeed();
   }, [])
 
